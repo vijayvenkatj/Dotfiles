@@ -1,0 +1,112 @@
+* {
+	min-height: 0;
+}
+
+window#waybar {
+	font-family: 'JetBrainsMono Nerd Font';
+	font-size: 16px;
+	background: rgba(0, 0, 0, 0.1); /* Semi-transparent dark background */
+	border: none;
+	color: #f0f0f0; /* Slightly off-white for softer contrast */
+}
+
+.modules-left,
+.modules-right {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+.modules-center {
+	padding: 0 100px;
+}
+
+#workspaces {
+	background: rgba(24, 24, 24, 0.85); /* Dark gray with slight opacity */
+	border: 1px solid rgba(255, 255, 255, 0.1); /* Low opacity for subtle borders */
+	border-radius: 8px;
+	margin: 0.4em 0.6em;
+	padding: 0 0.6em;
+}
+
+#workspaces button {
+	font-size: 8px;
+	margin: 0;
+	padding: 0 0;
+	color: #e0e0e0; /* Light gray */
+	transition: color 0.5s;
+}
+
+#workspaces button.active {
+	color: #bb86fc; /* A soft purple for active state */
+	transition: color 1s;
+}
+
+#taskbar button {
+	opacity: 0;
+	font-size: 0;
+	margin: 0.3em -20px 0.3em 0;
+	padding: 0;
+}
+
+#taskbar button.active {
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0.3em 0.2em;
+	padding: 0 0.4em;
+	opacity: 1;
+	color: #ffffff;
+}
+
+#clock {
+	font-family: 'JetBrainsMono Nerd Font';
+	margin: 0.3em 0.4em;
+	color: #e0e0e0;
+}
+
+#battery,
+#pulseaudio {
+	margin: 0.0em 0.8em;
+	color: #e0e0e0;
+}
+
+#battery.critical {
+	color: #ff5252; /* Bright red for critical battery */
+}
+
+#tray {
+	margin: 0.25em 0.5em;
+	padding: 0;
+	color: #e0e0e0;
+}
+
+#window {
+	font-size: 16px;
+	font-style: italic;
+	margin: 0 0.4em;
+	color: #e0e0e0;
+}
+
+#custom-sysicon {
+	font-size: 16px;
+	padding: 0 0.25em;
+	color: #e0e0e0;
+}
+
+#mpris {
+	font-size: 10px;
+	padding: 0 0.6em;
+	border-radius: 10px;
+	margin: 0.6em 0.3em;
+	background: rgba(24, 24, 24, 0.5); /* Transparent dark background */
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	color: #e0e0e0;
+}
+
+#mpris.paused {
+	font-size: 10px;
+	margin: 0.8em -5px;
+	background-color: transparent;
+	border: none;
+	color: #a0a0a0; /* Softer gray when paused */
+}
+

@@ -1,0 +1,49 @@
+{
+    // General settings
+    "layer": "bottom",
+    "position": "top",
+    "margin-left": 10,
+    "margin-right": 10,
+    "margin-top": 7,
+    "exclusive": true,
+    "passthrough": false,
+
+    // Module layout
+    "modules-left": ["custom/spacer", "hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["cpu", "network","battery", "custom/power"], // Changed 'memory' to 'battery'
+
+    // Basic modules
+    "clock": {
+        "format": "{:%Y-%m-%d %H:%M:%S}", // Display date and time
+        "interval": 1
+    },
+
+    "cpu": {
+        "interval": 5,
+        "format": "CPU: {usage}%" // Display CPU usage
+    },
+    "battery": {
+        "format": "{capacity}%"
+    },
+    "network": {
+        "format": "{ifname}: {ipaddr}" // Display network interface and IP
+    },
+
+    // Workspace module
+    "hyprland/workspaces": {
+        "format": "{name}", // Display workspace names
+        "show-icon": false
+    },
+
+    // Power button
+    "custom/power": {
+        "format": "Power",
+        "on-click": "systemctl poweroff" // Power off the system on click
+    },
+
+    // Spacer to separate modules
+    "custom/spacer": {
+        "format": " | " // Basic separator
+    }
+}

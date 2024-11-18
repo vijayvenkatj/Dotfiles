@@ -1,0 +1,105 @@
+{
+    "layer": "top",
+    "output": "eDP-1",
+    "modules-left": [
+        "custom/sysicon",
+        "hyprland/workspaces",
+        "wlr/taskbar",
+        "hyprland/window"
+    ],
+    "modules-center": [
+		  "clock#1",
+		  "clock#2",
+		  "clock#3"
+	  ],
+
+    "modules-right": [
+        "tray",
+        "pulseaudio",
+        "battery",
+        "custom/power"
+    ],
+    "height": 40,
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "fixed-center": true,
+    "exclusive": true,
+    "wlr/taskbar": {
+        "format": "{icon}  {name} -",
+        "active-first": true
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "icon-size": 16,
+	"format-icons": {
+		"default": ""
+	},
+	"persistent-workspaces": {
+             "*": 4 // 5 workspaces by default on every monitor
+        }
+    },
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10,
+	"reverse-direction": true
+    },
+    "pulseaudio": {
+	  "format": "{volume:2}% {icon}",
+	  "format-muted": "MUTE",
+	  "format-bluetooth": "{icon} {volume}% ",
+	  "format-icons": {
+		"headphones": "",
+		"default": [
+			"",
+			""
+		]
+	  },
+	  "scroll-step": 5,
+	  "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle"
+},
+
+    "battery": {
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}%  {icon}",
+        "format-charging": "{capacity}% ",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "max-length": 25
+    },
+    	"clock#1": {
+		    "format": "{:%a}",
+		    "tooltip": false
+	    },
+	    "clock#2": {
+		    "format": "{:%H:%M}",
+		    "tooltip": false
+	    },
+	    "clock#3": {
+		    "format": "{:%m-%d}",
+		  "tooltip": false
+	    },
+    "custom/sysicon": {
+        "format": " "
+    },
+    "custom/power": {
+        "format": "Power",
+        "on-click": "systemctl poweroff"
+      },
+    "hyprland/window": {
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "$1",
+            "Mozilla Firefox": "Loading...",
+            "(.*) - Visual Studio Code": "$1"
+        }
+    },
+}
